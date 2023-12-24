@@ -106,4 +106,23 @@ class MyCircularQueue {
  * boolean param_6 = obj.isFull();
  */
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-3.
+3.Queue Reversal
+
+//User function Template for Java
+/*Complete the function below*/
+class GfG{
+    //Function to reverse the queue.
+    public Queue<Integer> rev(Queue<Integer> q){
+        Stack<Integer> s=new Stack<>();
+        
+        while(!q.isEmpty()){
+            s.push(q.poll());
+        }
+        
+        while(!s.empty()){
+            q.add(s.pop());
+        }
+        return q;
+    }
+}
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
