@@ -1,0 +1,51 @@
+1.Implement Queue using Stacks
+
+class MyQueue {
+    public Stack<Integer> main = new Stack<>();
+    public Stack<Integer> helper = new Stack<>();
+
+    public MyQueue() {
+      
+
+    }
+    
+    public void push(int x) {
+         while(!main.isEmpty()){
+           helper.push(main.pop());
+       } 
+       main.push(x);
+       
+        while(!helper.isEmpty()){
+           main.push(helper.pop());
+       } 
+    }
+    
+    public int pop() {
+        if(!main.isEmpty()){
+        return main.pop();
+        }
+        return -1;
+    }
+    
+    public int peek() {
+         if(!main.isEmpty()){
+        return main.peek();
+        }
+        return -1;
+    }
+    
+    public boolean empty() {
+        return main.isEmpty();
+    }
+}
+
+/**
+ * Your MyQueue object will be instantiated and called as such:
+ * MyQueue obj = new MyQueue();
+ * obj.push(x);
+ * int param_2 = obj.pop();
+ * int param_3 = obj.peek();
+ * boolean param_4 = obj.empty();
+ */
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2.Design Circular Queue
